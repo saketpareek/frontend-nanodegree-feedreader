@@ -1,4 +1,4 @@
-# Arcade Game Project
+# Feed Reader Testing Project
 Feed Reader test is a test specification file built using jasmine test suite. It basically checks various aspects of feed reader application, ie, if app loads feeds sucessfully, functionality of menu icon and checks for similar feeds, etc. 
 
 
