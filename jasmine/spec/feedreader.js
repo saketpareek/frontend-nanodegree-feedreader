@@ -116,14 +116,33 @@ $(function() {
 
     describe('New Feed Selection', function(){
 
-
+      let oldFeed, newFeed;
 
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
 
-    });     
+         beforeEach(function(done){
+           $('feed').empty();
+           loadFeed(0, function(){
+             oldFeed = $('.feed').find(allFeeds.url);
+             done();
+           });
+
+           loadFeed(1, function(){
+             newFeed = $('.feed').find(allFeeds.url);
+             done();
+           });
+
+         });
+
+         it('check if old feed is not equal to new feed', function(){
+           expect(oldFeed).not.toBe(newFeed);
+
+         });
+
+    });
 
 
 }());
