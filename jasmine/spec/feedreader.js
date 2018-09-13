@@ -64,6 +64,7 @@ $(function() {
          * hiding/showing of the menu element.
          */
          let mainPage = $('body');
+         let menuIcon = $('.menu-icon-link');
 
          it('is hidden by default', function() {
            expect(mainPage.hasClass('menu-hidden')).toBeDefined();
@@ -75,6 +76,13 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+
+          it('changes visibility when clicked', function(){
+            menuIcon.trigger('click');
+            expect(mainPage.hasClass('menu-hidden')).toBe(false);
+            menuIcon.trigger('click');
+            expect(mainPage.hasClass('menu-hidden')).toBe(true);
+          });
 
     });
 
