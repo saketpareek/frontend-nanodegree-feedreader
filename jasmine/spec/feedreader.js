@@ -31,6 +31,8 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
+
+         // Checking if allfeeds array has a url defined and it is not empty by using for loop
          it('urls are defined and are not empty', function(){
            for(var i=0; i< allFeeds.length; i ++) {
              expect(allFeeds[i].url).toBeDefined();
@@ -44,6 +46,8 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+
+         // checking if names are defined and are not empty using the same for loop
 
          it('names are defined and are not empty', function(){
            for(var i=0; i<allFeeds.length; i++) {
@@ -63,6 +67,8 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
+
+         // Checking if initial mainpage has a class of name 'menu-hidden'
          let mainPage = $('body');
          let menuIcon = $('.menu-icon-link');
 
@@ -76,6 +82,8 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+
+          // Checking to see if first on click mainpage menu-hidden property is false and on second click its true
 
           it('changes visibility when clicked', function(){
             menuIcon.trigger('click');
@@ -98,6 +106,8 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+
+         // Executing test after feed loads and testing if feed has entry
 
          beforeEach(function(done){
            loadFeed(0, function(){
@@ -122,6 +132,8 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+
+         // Storing urls in oldFeed and newFeed  and comparing if they are not equal
 
          beforeEach(function(done){
            $('feed').empty();
